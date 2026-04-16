@@ -111,9 +111,6 @@ We may update this Privacy Policy from time to time. We will notify you of any s
 
 
 
-12. Contact Us
-If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
-
 CoinAIfy Support Email: [coinaify@gmail.com]
 
 
