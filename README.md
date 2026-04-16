@@ -72,7 +72,7 @@ Because CoinAIfy stores data locally on your device, you are in full control of 
 
 
 8. Children's Privacy
-CoinAIfy is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at the address below and we will take steps to delete such information.
+CoinAIfy is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13.
 
 
 9. Third-Party Services
