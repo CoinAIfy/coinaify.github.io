@@ -1,55 +1,376 @@
-<h2>Privacy Policy — CoinAIfy: Coin & Banknote Identifier Effective Date: March 22, 2026 Last updated on April 15, 2026</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | CoinAIfy</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #dbe3ee;
+      --accent: #2563eb;
+      --accent-soft: #eaf1ff;
+      --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+      --max: 980px;
+    }
 
-<p>Introduction Welcome to CoinAIfy ("the App", "we", "us", or "our"). CoinAIfy is a mobile application that uses artificial intelligence to identify coins and banknotes, provide professional-grade valuations, and help users manage their numismatic collections. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App. Please read this policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the App.</p>
-<p>We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by updating the "Last Updated" date of this Privacy Policy. You are encouraged to periodically review this Privacy Policy to stay informed of updates.</p>
+    * {
+      box-sizing: border-box;
+    }
 
-<p>Information We Collect 2.1 Information You Provide Directly CoinAIfy is designed to operate primarily as a local, on-device application. We do not require you to create an account or provide personal information to use the core features of the App. The following information is handled only within your device:</p>
-<p>• Coin and banknote images you photograph or select from your photo library for identification purposes. • Collection data including coin names, grades, valuations, and notes you add to your personal collection. • Favorites and scan history stored locally on your device using your device's secure storage.</p>
+    html {
+      scroll-behavior: smooth;
+    }
 
-<p>2.2 Information Collected Automatically When you use the App, certain technical information may be collected automatically to support app functionality and improve performance:</p>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+      color: var(--text);
+      text-align: center;
+      line-height: 1.75;
+    }
 
-<p>• Device information: Device model, operating system version, and unique device identifiers used for app compatibility and crash diagnostics. • App usage data: Anonymous information about how you interact with the App, such as features accessed and session duration, which may be collected through Expo's built-in analytics or similar tools. This data does not identify you personally. • Crash reports: If the App crashes, anonymized diagnostic data may be automatically sent to help us identify and fix issues.</p>
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--line);
+    }
 
-<p>2.3 In-App Purchase Information All subscription and payment transactions are processed exclusively by Apple through the App Store. We do not collect, store, or have access to your payment card details, billing address, or Apple ID credentials. Apple's handling of payment data is governed by Apple's Privacy Policy.</p>
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-<p>How We Use Your Information We use the information described above for the following purposes:</p>
-<p>Purpose Basis Processing coin and banknote images through AI identification Core app functionality Storing your collection, scan history, and favorites locally on your device Core app functionality Diagnosing crashes and technical errors Legitimate interest in maintaining app quality Improving app features and user experience through anonymous usage analytics Legitimate interest in product improvement Verifying subscription status with Apple Contractual necessity for paid features We do not sell, trade, or rent your personal information to third parties. We do not use your data for advertising profiling or behavioral targeting.</p>
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-decoration: none;
+    }
 
-<p>Device Permissions CoinAIfy requests the following device permissions. Each permission is used solely for the stated purpose and is never accessed for any other reason.</p>
-<p>Permission Purpose When Requested Camera To photograph coins and banknotes for AI identification When you tap "Scan a Coin" Photo Library (Read) To select existing photos of coins for identification When you choose to upload an image Photo Library (Write) To save branded coin share cards to your CoinAIfy album When you tap "Save to Photos" Location (When In Use) To find nearby coin dealers and shops on the dealer map When you access the Dealer Finder feature Microphone Not used by CoinAIfy Not applicable You may revoke any of these permissions at any time through your device's Settings app. Revoking a permission will disable the corresponding feature but will not affect other functionality.</p>
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-<p>AI Processing and Image Data When you photograph or upload an image of a coin or banknote, that image is processed by an AI model to perform identification, grading, and valuation. Please be aware of the following:</p>
-<p>• Images submitted for identification may be transmitted to a remote AI processing service to generate results. • Images are used solely for the purpose of identification and are not stored on our servers beyond the time required to generate a result. • We do not use your coin images to train AI models without your explicit consent. • Identification results, grades, and valuations are returned to your device and stored locally. They are not associated with your identity on our servers.</p>
+    .nav a {
+      text-decoration: none;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid #d7e5ff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
 
-<p>Data Storage and Security All collection data, scan history, favorites, and settings are stored locally on your device using your device's secure storage mechanisms (AsyncStorage / device keychain). This data does not leave your device unless you explicitly use the Share or Save to Photos features.</p>
-<p>We implement reasonable technical and organizational measures to protect your information. However, no method of transmission over the internet or method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+    .nav a:hover {
+      background: #dce9ff;
+    }
 
-<p>Data Retention Because CoinAIfy stores data locally on your device, you are in full control of your data retention. You may delete your scan history, collection, and favorites at any time within the App. Uninstalling the App will remove all locally stored data from your device.</p>
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 20px 80px;
+    }
 
-<p>Children's Privacy CoinAIfy is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(219, 227, 238, 0.9);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 42px 28px;
+    }
 
-<p>Third-Party Services The App may integrate with or link to the following third-party services:</p>
+    h1, h2, h3 {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      color: #0f172a;
+      line-height: 1.3;
+    }
 
-<p>Service Purpose Privacy Policy Apple App Store In-app purchases and subscription management apple.com/legal/privacy</p>
+    h1 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
 
-<p>Apple Maps / MapKit Displaying nearby coin dealers on the dealer map apple.com/legal/privacy</p>
+    .effective-date {
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
 
-<p>Expo App development framework; may collect anonymous crash and usage diagnostics expo.dev/privacy</p>
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 16px;
+    }
 
-<p>We are not responsible for the privacy practices of these third-party services. We encourage you to review their respective privacy policies.</p>
+    section {
+      scroll-margin-top: 90px;
+      padding-top: 8px;
+      margin-top: 30px;
+    }
 
-<p>Your Rights Depending on your location, you may have the following rights regarding your personal data:</p>
-<p>• Access: The right to request a copy of the personal data we hold about you. • Correction: The right to request that we correct inaccurate or incomplete data. • Deletion: The right to request that we delete your personal data. • Portability: The right to receive your data in a structured, machine-readable format. • Objection: The right to object to certain types of processing.</p>
+    h2 {
+      font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+      margin-bottom: 12px;
+    }
 
-<p>Because CoinAIfy stores data locally on your device and does not maintain user accounts, most of these rights are exercised directly through the App or by uninstalling it. For any data processed on our servers (such as AI identification requests), please contact us using the details below.</p>
+    h3 {
+      font-size: 1.08rem;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      color: #1d4ed8;
+    }
 
-<p>California Residents (CCPA): CoinAIfy does not sell personal information. California residents have the right to know what personal information is collected, to request deletion, and to opt out of the sale of personal information (which does not apply here as we do not sell data).</p>
+    p {
+      max-width: 760px;
+      margin: 12px auto;
+    }
 
-<p>European Residents (GDPR): If you are located in the European Economic Area, you have additional rights under the General Data Protection Regulation. Our lawful basis for processing is legitimate interest and contractual necessity as described in Section 3. You may lodge a complaint with your local supervisory authority.</p>
+    ul {
+      list-style-position: inside;
+      padding-left: 0;
+      margin: 10px auto 18px;
+      max-width: 820px;
+    }
 
-<p>Changes to This Privacy Policy We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last Updated" date at the top of this policy.</p>
-<p>Continued use of the App after any changes constitutes your acceptance of the updated policy. We encourage you to review this policy periodically.</p>
-<p>CoinAIfy Support Email: [coinaify@gmail.com] This Privacy Policy was last updated on March 22, 2026.</p>
+    li {
+      margin: 8px auto;
+      text-align: center;
+    }
 
-<p>These Terms of Use were last updated on April 15, 2026.</p>
+    .contact-box {
+      margin: 18px auto 0;
+      max-width: 680px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfdff;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 18px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 720px) {
+      .card {
+        padding: 28px 16px;
+        border-radius: 18px;
+      }
+
+      .topbar-inner {
+        justify-content: center;
+      }
+
+      .nav {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="brand">CoinAIfy Legal</a>
+      <nav class="nav" aria-label="Privacy Policy Navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#information-we-collect">Information</a>
+        <a href="#how-we-use-your-information">Use of Data</a>
+        <a href="#data-sharing-and-disclosure">Sharing</a>
+        <a href="#data-security">Security</a>
+        <a href="#data-retention">Retention</a>
+        <a href="#your-rights">Your Rights</a>
+        <a href="#cookies-and-tracking-technologies">Cookies</a>
+        <a href="#third-party-services">Third Parties</a>
+        <a href="#changes-to-this-privacy-policy">Changes</a>
+        <a href="#contact-us">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="top">
+    <article class="card">
+      <h1>Privacy Policy — CoinAIfy</h1>
+      <p class="effective-date"><strong>Effective Date:</strong> [Insert Date]</p>
+
+      <p class="intro">
+        CoinAIfy ("we," "our," or "us") respects your privacy and is committed to
+        protecting your personal information. This Privacy Policy explains how we
+        collect, use, disclose, and safeguard your information when you use our platform.
+      </p>
+
+      <p class="intro">
+        By using CoinAIfy, you agree to the terms outlined in this Privacy Policy.
+      </p>
+
+      <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>
+          This Privacy Policy applies to your access to and use of CoinAIfy’s website,
+          products, and related services. It is intended to help you understand what
+          data we collect and how we handle it.
+        </p>
+      </section>
+
+      <section id="information-we-collect">
+        <h2>2. Information We Collect</h2>
+
+        <h3>2.1 Personal Information</h3>
+        <ul>
+          <li>Name</li>
+          <li>Email address</li>
+          <li>Contact details</li>
+        </ul>
+
+        <h3>2.2 Usage Data</h3>
+        <ul>
+          <li>Pages visited</li>
+          <li>Features used</li>
+          <li>Interaction with the platform</li>
+        </ul>
+
+        <h3>2.3 Device &amp; Technical Data</h3>
+        <ul>
+          <li>IP address</li>
+          <li>Browser type</li>
+          <li>Device type</li>
+          <li>Operating system</li>
+        </ul>
+      </section>
+
+      <section id="how-we-use-your-information">
+        <h2>3. How We Use Your Information</h2>
+        <p>We use collected data to:</p>
+        <ul>
+          <li>Provide, operate, and maintain our services</li>
+          <li>Improve functionality and user experience</li>
+          <li>Communicate with users, including updates and support</li>
+          <li>Monitor usage and detect issues</li>
+          <li>Ensure security and help prevent fraud</li>
+        </ul>
+      </section>
+
+      <section id="data-sharing-and-disclosure">
+        <h2>4. Data Sharing and Disclosure</h2>
+        <p>We do <strong>not</strong> sell your personal data.</p>
+        <p>We may share information with:</p>
+        <ul>
+          <li><strong>Service Providers</strong> for hosting, analytics, or support tools</li>
+          <li><strong>Legal Authorities</strong> when required by law</li>
+          <li><strong>Business Transfers</strong> such as a merger, acquisition, or reorganization</li>
+        </ul>
+      </section>
+
+      <section id="data-security">
+        <h2>5. Data Security</h2>
+        <p>
+          We implement appropriate technical and organizational measures to protect
+          your personal data from unauthorized access, disclosure, alteration, or destruction.
+        </p>
+        <p>
+          However, no method of transmission or storage is completely secure, and we
+          cannot guarantee absolute security.
+        </p>
+      </section>
+
+      <section id="data-retention">
+        <h2>6. Data Retention</h2>
+        <p>We retain your data only for as long as necessary to:</p>
+        <ul>
+          <li>Fulfill the purposes outlined in this policy</li>
+          <li>Comply with legal obligations</li>
+          <li>Resolve disputes</li>
+          <li>Enforce our agreements</li>
+        </ul>
+      </section>
+
+      <section id="your-rights">
+        <h2>7. Your Rights</h2>
+        <p>Depending on your location, you may have the right to:</p>
+        <ul>
+          <li>Access your data</li>
+          <li>Correct inaccurate information</li>
+          <li>Request deletion of your data</li>
+          <li>Restrict or object to certain processing</li>
+        </ul>
+        <p>
+          To exercise your rights, contact us using the details in the contact section below.
+        </p>
+      </section>
+
+      <section id="cookies-and-tracking-technologies">
+        <h2>8. Cookies and Tracking Technologies</h2>
+        <p>We may use cookies and similar technologies to:</p>
+        <ul>
+          <li>Enhance user experience</li>
+          <li>Analyze usage patterns</li>
+          <li>Store user preferences</li>
+        </ul>
+        <p>
+          You can manage cookie settings through your browser or device settings.
+        </p>
+      </section>
+
+      <section id="third-party-services">
+        <h2>9. Third-Party Services</h2>
+        <p>
+          Our platform may contain links to or integrations with third-party services.
+          We are not responsible for the privacy practices, content, or policies of those third parties.
+        </p>
+      </section>
+
+      <section id="changes-to-this-privacy-policy">
+        <h2>10. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. Any changes will be
+          posted on this page along with an updated effective date.
+        </p>
+      </section>
+
+      <section id="contact-us">
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, you can contact us at:</p>
+        <div class="contact-box">
+          <p><strong>Email:</strong> your-email@example.com</p>
+        </div>
+      </section>
+
+      <div class="footer">
+        <p>This Privacy Policy was last updated on [Insert Date].</p>
+        <a class="back-to-top" href="#top">Back to top</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
 <p>By continuing to use CoinAIfy, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
