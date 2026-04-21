@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoinAIfy Support</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e5ea;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    header .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #b8860b;
+      letter-spacing: -0.5px;
+    }
+
+    header .logo span {
+      color: #1d1d1f;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #6e6e73;
+      margin-top: 4px;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    p {
+      font-size: 16px;
+      color: #3a3a3c;
+      margin-bottom: 12px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #6e6e73;
+      margin-bottom: 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e5ea;
+      padding: 16px 0;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-item h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      font-size: 15px;
+      color: #6e6e73;
+      margin-bottom: 0;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: #b8860b;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 980px;
+      text-decoration: none;
+      margin-top: 8px;
+      transition: opacity 0.15s;
+    }
+
+    .contact-btn:hover { opacity: 0.85; }
+
+    .legal-links {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 14px;
+      color: #6e6e73;
+    }
+
+    .legal-links a {
+      color: #b8860b;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    .legal-links a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 13px;
+      color: #aeaeb2;
+      border-top: 1px solid #e5e5ea;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Coin<span>AIfy</span></div>
+    <p>AI-Powered Coin &amp; Banknote Identifier</p>
+  </header>
+
+  <main>
+
+    <h2>How can we help?</h2>
+    <p>Find answers to common questions below, or contact us directly and we'll get back to you within 1–2 business days.</p>
+
+    <div class="card">
+      <h3>📸 Getting the best scan results</h3>
+      <p>Place your coin or banknote on a flat, non-reflective surface. Use good lighting — natural daylight works best. Centre the item in the frame and hold the camera steady before tapping the shutter. Avoid shadows and glare.</p>
+    </div>
+
+    <div class="card">
+      <h3>💳 Managing your subscription</h3>
+      <p>Open the app, go to <strong>Settings → Manage Subscription</strong> to upgrade, downgrade, or cancel. You can also manage your subscription directly in <strong>iPhone Settings → Apple ID → Subscriptions</strong>.</p>
+    </div>
+
+    <div class="card">
+      <h3>🔄 Restoring a previous purchase</h3>
+      <p>If you reinstalled the app or switched devices, go to <strong>Settings → Restore Purchases</strong> to recover your subscription. Make sure you are signed in with the same Apple ID used for the original purchase.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="card">
+      <div class="faq-item">
+        <h3>How accurate is the AI identification?</h3>
+        <p>CoinAIfy uses a multimodal AI model trained on a wide range of coins and banknotes. Accuracy is high for common issues but may vary for rare, damaged, or heavily worn items. Always verify high-value identifications with a professional numismatist.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are market values guaranteed?</h3>
+        <p>Market value estimates are AI-generated approximations based on publicly available pricing data. They are provided for reference only and do not constitute a professional appraisal or guarantee of sale price.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data private?</h3>
+        <p>Images are sent to our server over HTTPS solely to generate the identification result and are not stored after analysis. No personally identifiable information is transmitted. See our <a href="https://coinaify.github.io/privacy">Privacy Policy</a> for full details.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does the app work offline?</h3>
+        <p>An internet connection is required to perform AI identification. Your saved collection is stored locally on your device and is accessible offline.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I delete my collection data?</h3>
+        <p>Go to <strong>Settings → Collection</strong> and tap <strong>Clear All Data</strong>. This permanently removes all saved items from your device. Alternatively, deleting and reinstalling the app will also clear all local data.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the free trial?</h3>
+        <p>New users receive a 2-day free trial with full access to all features. No payment is required to start the trial. After the trial ends, you will be prompted to choose a subscription plan to continue using the app.</p>
+      </div>
+    </div>
+
+    <h2>Contact Support</h2>
+    <p>Still need help? Send us an email and we'll respond within 1–2 business days.</p>
+    <a class="contact-btn" href="mailto:coinaify@gmail.com">Email Support</a>
+
+    <div class="legal-links">
+      <a href="https://coinaify.github.io/privacy">Privacy Policy</a>
+      <a href="https://coinaify.github.io/terms">Terms of Service</a>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 CoinAIfy. All rights reserved.
+  </footer>
+
+</body>
+</html>
