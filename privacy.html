@@ -1,196 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<title>Privacy Policy — CoinAIfy</title>
+  <title>Privacy Policy — CoinAIfy</title>
+  <meta name="description" content="CoinAIfy Privacy Policy — how we handle your data when you use the CoinAIfy coin and banknote identification app." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-}
+    :root {
+      --gold: #b8860b;
+      --gold-light: #d4a017;
+      --dark: #1d1d1f;
+      --mid: #3a3a3c;
+      --muted: #6e6e73;
+      --bg: #f5f5f7;
+      --white: #ffffff;
+      --border: #e5e5ea;
+      --navy: #0a0f1e;
+      --surface: #f9f9fb;
+    }
 
-.page {
-  max-width: 900px;
-  margin: 40px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid #ddd;
-}
+    html { scroll-behavior: smooth; }
 
-/* Title centered */
-h1 {
-  text-align: center;
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-/* Section headers centered + bold */
-.section-header {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 30px;
-}
+    /* ── NAV ── */
+    nav {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-/* Titles bold */
-.title-bold {
-  font-weight: bold;
-}
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--gold); text-decoration: none; }
+    .nav-logo span { color: var(--dark); }
 
-/* Body text left aligned */
-p {
-  text-align: left;
-  line-height: 1.6;
-  margin: 10px 0;
-}
+    .nav-back {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-back:hover { color: var(--gold); }
 
-ul {
-  text-align: left;
-  padding-left: 20px;
-}
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
 
-li {
-  margin: 6px 0;
-}
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
 
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-}
+    .hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto;
+    }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
+    .hero .effective {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(184,134,11,0.2);
+      border: 1px solid rgba(184,134,11,0.4);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: #d4a017;
+      font-weight: 600;
+    }
 
-th {
-  font-weight: bold;
-}
-</style>
+    /* ── LAYOUT ── */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── SUMMARY CARD ── */
+    .summary-card {
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .summary-card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      background: var(--surface);
+      border-radius: 10px;
+    }
+
+    .summary-item .icon { font-size: 20px; flex-shrink: 0; }
+
+    .summary-item .label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+
+    .summary-item .desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 20px 0 8px;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--mid);
+      margin-bottom: 12px;
+      line-height: 1.75;
+    }
+
+    .section ul {
+      list-style: none;
+      margin: 8px 0 16px;
+      padding: 0;
+    }
+
+    .section ul li {
+      font-size: 15px;
+      color: var(--mid);
+      padding: 6px 0 6px 24px;
+      position: relative;
+      line-height: 1.65;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section ul li:last-child { border-bottom: none; }
+
+    .section ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .data-table th:first-child { border-radius: 8px 0 0 0; }
+    .data-table th:last-child { border-radius: 0 8px 0 0; }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--mid);
+      vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-no { background: #dcfce7; color: #166534; }
+    .badge-local { background: #dbeafe; color: #1e40af; }
+    .badge-transit { background: #fef9c3; color: #854d0e; }
+    .badge-anon { background: #f3e8ff; color: #6b21a8; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: #fffbeb;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0 24px;
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    .highlight strong { color: var(--dark); }
+
+    /* ── CONTACT ── */
+    .contact-box {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 16px;
+      padding: 28px 32px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .contact-box h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+
+    .contact-box a {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .contact-box a:hover { background: var(--gold-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--gold-light); }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 16px; }
+      .content { padding: 36px 16px 60px; }
+      .summary-card { padding: 20px; }
+      .data-table { font-size: 12px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="page">
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="https://coinaify.github.io/">Coin<span>AIfy</span></a>
+    <a class="nav-back" href="https://coinaify.github.io/">← Back to Home</a>
+  </nav>
 
-<h1>Privacy Policy — CoinAIfy</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Privacy Policy</h1>
+    <p>We built CoinAIfy with privacy in mind. Here is exactly what data we collect, why, and where it goes.</p>
+    <div class="effective">Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Updated: April 2026</div>
+  </section>
 
-<p><strong>Effective Date:</strong> March 22, 2026</p>
+  <!-- CONTENT -->
+  <div class="content">
 
-<p>CoinAIfy ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.</p>
-
-<p>By using CoinAIfy, you agree to the terms outlined in this Privacy Policy.</p>
-
-<p class="section-header"><strong>1. Introduction</strong></p>
-<p>This Privacy Policy applies to your access to and use of CoinAIfy’s website, products, and related services. It is intended to help you understand what data we collect and how we handle it.</p>
-
-<p class="section-header"><strong>2. Information We Collect</strong></p>
-
-<p class="title-bold">2.1 Personal Information</p>
-<ul>
-<li>Name</li>
-<li>Email address</li>
-<li>Contact details</li>
-</ul>
-
-<p class="title-bold">2.2 Usage Data</p>
-<ul>
-<li>Pages visited</li>
-<li>Features used</li>
-<li>Interaction with the platform</li>
-</ul>
-
-<p class="title-bold">2.3 Device & Technical Data</p>
-<ul>
-<li>IP address</li>
-<li>Browser type</li>
-<li>Device type</li>
-<li>Operating system</li>
-</ul>
-
-<p class="section-header"><strong>3. How We Use Your Information</strong></p>
-<p>We use collected data to:</p>
-<ul>
-<li>Provide, operate, and maintain our services</li>
-<li>Improve functionality and user experience</li>
-<li>Communicate with users (updates, support, notifications)</li>
-<li>Monitor usage and detect issues</li>
-<li>Ensure security and prevent fraud</li>
-</ul>
-
-<p class="section-header"><strong>4. Data Sharing and Disclosure</strong></p>
-<p>We do <strong>not sell your personal data</strong>.</p>
-<p>We may share information with:</p>
-<ul>
-<li><strong>Service Providers</strong> (hosting, analytics, support tools)</li>
-<li><strong>Legal Authorities</strong> when required by law</li>
-<li><strong>Business Transfers</strong> (e.g., merger, acquisition)</li>
-</ul>
-
-<p class="section-header"><strong>5. Data Security</strong></p>
-<p>We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, disclosure, or destruction.</p>
-<p>However, no system is completely secure, and we cannot guarantee absolute security.</p>
-
-<p class="section-header"><strong>6. Data Retention</strong></p>
-<p>We retain your data only for as long as necessary to:</p>
-<ul>
-<li>Fulfill the purposes outlined in this policy</li>
-<li>Comply with legal obligations</li>
-<li>Resolve disputes</li>
-</ul>
-
-<p class="section-header"><strong>7. Your Rights</strong></p>
-<p>Depending on your location, you may have the right to:</p>
-<ul>
-<li>Access your data</li>
-<li>Correct inaccurate information</li>
-<li>Request deletion of your data</li>
-<li>Restrict or object to processing</li>
-</ul>
-
-<p class="section-header"><strong>8. Cookies and Tracking Technologies</strong></p>
-<p>We may use cookies and similar technologies to:</p>
-<ul>
-<li>Enhance user experience</li>
-<li>Analyze usage patterns</li>
-<li>Store user preferences</li>
-</ul>
-<p>You can manage cookies through your browser settings.</p>
-
-<p class="section-header"><strong>9. Third-Party Services</strong></p>
-<p>Our platform may contain links or integrations with third-party services. We are not responsible for the privacy practices of those services.</p>
-
-<p class="section-header"><strong>10. Changes to This Privacy Policy</strong></p>
-<p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date.</p>
-
-<p class="section-header"><strong>11. Contact Us</strong></p>
-<p>If you have any questions about this Privacy Policy, you can contact us at:</p>
-
-<p><strong>Email:</strong> coinaify@gmail.com</p>
-
-</div>
-<div class="legal-links">
-      <a href="https://coinaify.com">Home</a>
-      <a href="https://coinaify.com/support">Support</a>      
-      <a href="https://coinaify.com/terms">Terms of Service</a>
-      <a href="https://coinaify.com/subscribe">Pricing Details</a>
-      <a href="mailto:coinaify@gmail.com">Contact</a>
+    <!-- AT A GLANCE -->
+    <div class="summary-card">
+      <h2>🔍 Privacy at a Glance</h2>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="icon">📷</div>
+          <div>
+            <div class="label">Images Not Stored</div>
+            <div class="desc">Scan images are processed in memory and immediately discarded.</div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="icon">📱</div>
+          <div>
+            <div class="label">Collection Stays on Device</div>
+            <div class="desc">Your coin and banknote collection is stored locally only.</div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="icon">🚫</div>
+          <div>
+            <div class="label">No Analytics SDKs</div>
+            <div class="desc">No Mixpanel, Firebase, or behavioural tracking of any kind.</div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="icon">🔒</div>
+          <div>
+            <div class="label">No Account Required</div>
+            <div class="desc">CoinAIfy does not require you to create an account or provide personal information.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-  </main>
+    <!-- 1. INTRODUCTION -->
+    <div class="section">
+      <h2><span class="num">1</span> Introduction</h2>
+      <p>CoinAIfy ("we," "us," or "our") is an iOS application that uses artificial intelligence to identify, grade, and value coins and banknotes from photographs. This Privacy Policy explains what information is collected when you use CoinAIfy, how it is used, and your rights regarding that information.</p>
+      <p>By using CoinAIfy, you agree to the practices described in this policy. If you do not agree, please discontinue use of the app.</p>
+    </div>
+
+    <!-- 2. DATA WE COLLECT -->
+    <div class="section">
+      <h2><span class="num">2</span> Data We Collect and How It Is Used</h2>
+
+      <h3>2.1 Coin and Banknote Images</h3>
+      <p>When you scan a coin or banknote, the image is compressed on your device and transmitted to our server solely for AI identification. The image is passed to an AI vision model, which returns identification results (name, grade, estimated value, etc.). <strong>Images are never written to a database, file system, or any persistent storage.</strong> They exist only in server memory for the duration of the request — typically a few seconds — and are discarded immediately after the AI responds.</p>
+
+      <div class="highlight">
+        <strong>In plain terms:</strong> We cannot retrieve, review, or share your scan images. They are gone the moment the AI finishes processing them.
+      </div>
+
+      <h3>2.2 Scan Results and Collection Data</h3>
+      <p>The AI identification result (coin name, country, year, grade, estimated market value, serial number, etc.) is returned to your device and saved locally using your device's on-device storage (AsyncStorage). <strong>This data never leaves your device and is never sent to our servers.</strong> If you delete the app, this data is permanently removed.</p>
+
+      <h3>2.3 Location Data (Dealer Finder Only)</h3>
+      <p>If you use the "Find Nearby Dealers" feature, the app requests your device's GPS coordinates. These coordinates are sent to our server, which forwards them to the Apple Maps Server API to search for nearby coin dealers and shops. <strong>Your location is not stored.</strong> It is used only for the duration of the search query and discarded immediately after results are returned.</p>
+
+      <h3>2.4 Subscription and Purchase Data (RevenueCat)</h3>
+      <p>Subscription purchases are processed by Apple and managed through RevenueCat, a third-party subscription management platform. We receive only your subscription status (active/inactive) and the plan type (monthly, annual, or lifetime). We never receive your Apple ID, payment card details, or billing address. RevenueCat's own privacy policy governs their data practices: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.</p>
+
+      <h3>2.5 Anonymous Install Attribution (SKAdNetwork)</h3>
+      <p>Apple's SKAdNetwork (SKAN) framework sends privacy-preserving, anonymous install-attribution postbacks to our server when the app is installed via an advertisement. These postbacks contain no personal information — they are aggregated, delayed, and designed by Apple to be privacy-safe. The data we store from these postbacks is:</p>
+      <ul>
+        <li>A unique transaction ID assigned by Apple (not linked to any individual)</li>
+        <li>The ad network and campaign that drove the install</li>
+        <li>An aggregate conversion value (e.g., "trial started") — not individual behaviour</li>
+        <li>Whether the attribution "won" (Apple's attribution logic)</li>
+        <li>The timestamp the postback was received</li>
+      </ul>
+      <p>This data is used solely to measure the effectiveness of advertising campaigns at an aggregate level. It cannot be used to identify any individual user.</p>
+    </div>
+
+    <!-- 3. THIRD-PARTY SERVICES -->
+    <div class="section">
+      <h2><span class="num">3</span> Third-Party Services</h2>
+      <p>CoinAIfy uses the following third-party services. Each has its own privacy policy:</p>
+      <ul>
+        <li><strong>AI Vision Model (Gemini 2.0 Flash via Manus Forge):</strong> Receives your scan images for identification. Images are not retained by the AI provider after processing.</li>
+        <li><strong>RevenueCat:</strong> Manages subscription status and in-app purchases. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.</li>
+        <li><strong>Apple App Store / StoreKit:</strong> Processes all payments. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.</li>
+        <li><strong>Apple Maps Server API:</strong> Used for the dealer finder feature. Receives GPS coordinates only during a search query. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.</li>
+      </ul>
+      <p>CoinAIfy does not integrate any advertising SDKs, social media SDKs, analytics platforms, or crash reporting tools.</p>
+    </div>
+
+    <!-- 5. DATA RETENTION -->
+    <div class="section">
+      <h2><span class="num">4</span> Data Retention</h2>
+      <p><strong>On-device data</strong> (your collection, scan results, subscription state) is retained until you delete the app or clear its data in iOS Settings. We have no ability to access or delete this data on your behalf.</p>
+      <p><strong>Anonymous SKAN attribution data</strong> is retained on our servers for up to 36 months for aggregate advertising analytics, then deleted.</p>
+      <p><strong>Scan images and location data</strong> are never retained — they are discarded immediately after processing.</p>
+    </div>
+
+    <!-- 6. CHILDREN -->
+    <div class="section">
+      <h2><span class="num">5</span> Children's Privacy</h2>
+      <p>CoinAIfy is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. Because CoinAIfy does not collect personal information from any user, there is no special risk to children's privacy. </a>.</p>
+    </div>
+
+    <!-- 7. YOUR RIGHTS -->
+    <div class="section">
+      <h2><span class="num">6</span> Your Rights</h2>
+      <p>Because CoinAIfy does not collect personal information tied to your identity, most traditional data subject rights (access, correction, deletion) apply only to the data stored locally on your device, which you control directly.</p>
+      <ul>
+        <li><strong>Access your collection data:</strong> It is stored on your device and visible within the app at all times.</li>
+        <li><strong>Delete your collection data:</strong> Delete the app or clear its data in iOS Settings → CoinAIfy → Reset.</li>
+        <li><strong>Manage subscription data:</strong> Contact RevenueCat or manage through iPhone Settings → Apple ID → Subscriptions.</li>
+        <li><strong>Opt out of SKAN attribution:</strong> You can limit ad tracking in iOS Settings → Privacy &amp; Security → Tracking.</li>
+      </ul>
+      <p>If you have questions about your data or wish to exercise any rights, contact us at <a href="mailto:coinaify@gmail.com">coinaify@gmail.com</a>.</p>
+    </div>
+
+    <!-- 8. SECURITY -->
+    <div class="section">
+      <h2><span class="num">7</span> Security</h2>
+      <p>All data transmitted between the app and our server is encrypted in transit using HTTPS/TLS. Scan images are processed in server memory and never written to disk. We do not store personal data, which means there is no personal data to be breached.</p>
+      <p>No method of transmission over the internet is 100% secure. However, because we do not retain images, location data, or personal identifiers, the risk of a data breach affecting your personal information is minimal.</p>
+    </div>
+
+    <!-- 9. CHANGES -->
+    <div class="section">
+      <h2><span class="num">8</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. For significant changes, we will provide notice within the app. Continued use of CoinAIfy after changes are posted constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <!-- 10. CONTACT -->
+    <div class="section">
+      <h2><span class="num">9</span> Contact Us</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:coinaify@gmail.com">coinaify@gmail.com</a></li>
+        <li><strong>Support:</strong> <a href="https://coinaify.github.io/support/">coinaify.github.io/support</a></li>
+      </ul>
+    </div>
+
+  </div>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Coin<span>AIfy</span></div>
-    <p class="footer-copy">&copy; 2026 CoinAIfy. All rights reserved. Apple and the Apple logo are trademarks of Apple Inc.</p>
+    <div class="footer-links">
+      <a href="https://coinaify.com">Home</a>
+      <a href="https://coinaify.com/pricing">Pricing</a>
+      <a href="https://coinaify.com/terms">Terms of Service</a>
+      <a href="https://coinaify.com/support">Support</a>
+      <a href="mailto:coinaify@gmail.com">Contact</a>
+    </div>
+    <p>&copy; 2026 CoinAIfy. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
+
