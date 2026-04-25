@@ -1,184 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<title>Terms of Use — CoinAIfy</title>
+  <title>Terms of Service — CoinAIfy</title>
+  <meta name="description" content="CoinAIfy Terms of Service — the terms and conditions governing your use of the CoinAIfy coin and banknote identification app." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-}
+    :root {
+      --gold: #b8860b;
+      --gold-light: #d4a017;
+      --dark: #1d1d1f;
+      --mid: #3a3a3c;
+      --muted: #6e6e73;
+      --bg: #f5f5f7;
+      --white: #ffffff;
+      --border: #e5e5ea;
+      --navy: #0a0f1e;
+      --surface: #f9f9fb;
+    }
 
-.page {
-  max-width: 900px;
-  margin: 40px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid #ddd;
-}
+    html { scroll-behavior: smooth; }
 
-h1 {
-  text-align: center;
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-.section-header {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 30px;
-}
+    /* ── NAV ── */
+    nav {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.title-bold {
-  font-weight: bold;
-}
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--gold); text-decoration: none; }
+    .nav-logo span { color: var(--dark); }
 
-p {
-  text-align: left;
-  line-height: 1.6;
-  margin: 10px 0;
-}
+    .nav-back {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-back:hover { color: var(--gold); }
 
-ul {
-  text-align: left;
-  padding-left: 20px;
-}
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
 
-li {
-  margin: 6px 0;
-}
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-}
+    .hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+      margin: 0 auto;
+    }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
+    .hero .effective {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(184,134,11,0.2);
+      border: 1px solid rgba(184,134,11,0.4);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: #d4a017;
+      font-weight: 600;
+    }
 
-th {
-  font-weight: bold;
-}
-</style>
+    /* ── LAYOUT ── */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 20px 0 8px;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--mid);
+      margin-bottom: 12px;
+      line-height: 1.75;
+    }
+
+    .section p a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .section p a:hover { text-decoration: underline; }
+
+    .section ul {
+      list-style: none;
+      margin: 8px 0 16px;
+      padding: 0;
+    }
+
+    .section ul li {
+      font-size: 15px;
+      color: var(--mid);
+      padding: 6px 0 6px 24px;
+      position: relative;
+      line-height: 1.65;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section ul li:last-child { border-bottom: none; }
+
+    .section ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .section ul li a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .section ul li a:hover { text-decoration: underline; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: #fffbeb;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0 24px;
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    .highlight strong { color: var(--dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--gold-light); }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 16px; }
+      .content { padding: 36px 16px 60px; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="page">
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="https://coinaify.com">Coin<span>AIfy</span></a>
+    <a class="nav-back" href="https://coinaify.com">← Back to Home</a>
+  </nav>
 
-<h1>Terms of Use</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Terms of Service</h1>
+    <p>Please read these terms carefully before using CoinAIfy. By downloading or using the app, you agree to be bound by them.</p>
+    <div class="effective">Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Updated: April 2026</div>
+  </section>
 
-<p><strong>CoinAIfy — Coin & Banknote Identifier</strong></p>
-<p><strong>Effective Date: April 15, 2026</strong></p>
+  <!-- CONTENT -->
+  <div class="content">
 
-<p class="section-header"><strong>1. Acceptance of Terms</strong></p>
-<p>By downloading, installing, or using the CoinAIfy mobile application ("App") on any Apple iOS device, you ("User") agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, you must not use the App. These Terms constitute a legally binding agreement between you and CoinAIfy ("we," "us," or "our").</p>
+    <!-- 1. ACCEPTANCE -->
+    <div class="section">
+      <h2><span class="num">1</span> Acceptance of Terms</h2>
+      <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("you" or "User") and CoinAIfy ("we," "us," or "our") governing your use of the CoinAIfy mobile application ("App") and any related services.</p>
+      <p>By downloading, installing, or using the App, you confirm that you are at least 13 years of age, have read and understood these Terms, and agree to be bound by them. If you do not agree, do not use the App.</p>
+      <p>These Terms incorporate Apple's standard Licensed Application End User License Agreement (EULA) where applicable. In the event of a conflict between these Terms and Apple's EULA, Apple's EULA shall prevail with respect to usage on Apple devices.</p>
+    </div>
 
-<p>Your continued use of the App following any modification to these Terms constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.</p>
+    <!-- 2. DESCRIPTION OF SERVICE -->
+    <div class="section">
+      <h2><span class="num">2</span> Description of Service</h2>
+      <p>CoinAIfy is an AI-powered iOS application that allows users to identify, grade, and estimate the market value of coins and banknotes by photographing them. The App provides:</p>
+      <ul>
+        <li>AI-based coin and banknote identification from photographs</li>
+        <li>Estimated grading and condition assessment</li>
+        <li>Estimated current market value ranges</li>
+        <li>Personal collection tracking and management</li>
+        <li>Nearby coin dealer and auction house finder</li>
+        <li>PMG/PCGS grade recognition for professionally graded notes</li>
+        <li>Serial number detection and classification for banknotes</li>
+      </ul>
+      <p>Access to all features requires an active subscription or valid free trial period.</p>
+    </div>
 
-<p class="section-header"><strong>2. Description of the App</strong></p>
-<p>CoinAIfy is an AI-powered mobile application designed to help numismatists, collectors, and enthusiasts identify, grade, and estimate the market value of coins and banknotes by analyzing photographs captured through the device camera. The App provides informational results including denomination, condition assessment, historical context, rarity, and estimated market value ranges. All valuations are AI-generated estimates and are provided for informational and educational purposes only.</p>
+    <!-- 3. SUBSCRIPTIONS AND PAYMENTS -->
+    <div class="section">
+      <h2><span class="num">3</span> Subscriptions and Payments</h2>
 
-<p class="section-header"><strong>3. Eligibility</strong></p>
-<p>You must be at least 13 years of age to use the App. If you are under 18, you must have the consent of a parent or legal guardian who agrees to be bound by these Terms on your behalf. By using the App, you represent and warrant that you meet these eligibility requirements.</p>
+      <h3>3.1 Subscription Plans</h3>
+      <p>CoinAIfy offers the following subscription options, all processed through the Apple App Store:</p>
+      <ul>
+        <li><strong>Monthly:</strong> $4.99 per month, billed monthly</li>
+        <li><strong>Annual:</strong> $19.99 per year, billed annually</li>
+        <li><strong>Lifetime:</strong> $49.99 one-time purchase, no recurring charges</li>
+      </ul>
+      <p>Prices are in USD and may vary by region based on Apple's pricing tiers. The price displayed in the App at the time of purchase is the price you will be charged.</p>
 
-<p class="section-header"><strong>4. Account Registration</strong></p>
-<p>Certain features of the App may require you to create an account. You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You must notify us immediately of any unauthorized use of your account.</p>
+      <h3>3.2 Free Trial</h3>
+      <p>New users may be offered a 2-day free trial with full access to all premium features. The trial begins when you select a subscription plan. If you do not cancel before the trial ends, your selected subscription will begin automatically and your Apple ID account will be charged.</p>
 
-<p class="section-header"><strong>5. Subscription Plans and In-App Purchases</strong></p>
+      <h3>3.3 Auto-Renewal</h3>
+      <p>Monthly and Annual subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the renewal date. Your Apple ID account will be charged within 24 hours prior to the end of the current period. Lifetime access is a one-time purchase with no renewal.</p>
 
-<p class="title-bold">5.1 Free Trial</p>
-<p>CoinAIfy offers a 2-day free trial that provides full access to all premium features, including unlimited scans, professional-grade AI valuations, and the Collection Manager. This is a limited time introductory offer and may be modified or discontinued at any time. The free trial automatically converts to a paid subscription at the end of the trial period unless cancelled before the trial expires.</p>
+      <h3>3.4 Cancellation</h3>
+      <p>You may cancel your subscription at any time through <strong>iPhone Settings → Apple ID → Subscriptions → CoinAIfy</strong>. Cancellation takes effect at the end of the current billing period; you retain access until that date. We do not offer refunds for partial subscription periods.</p>
 
-<p class="title-bold">5.2 Subscription Tiers</p>
-<p>After the free trial, access to premium features requires an active subscription. The following plans are available:</p>
+      <h3>3.5 Restore Purchases</h3>
+      <p>If you have previously purchased a subscription or lifetime access, you can restore it on a new device by tapping <strong>Settings → Restore Purchases</strong> within the App while signed in with the same Apple ID used for the original purchase.</p>
 
-<table>
-<tr><th>Plan</th><th>Price</th><th>Billing Cycle</th></tr>
-<tr><td>Monthly</td><td>$4.99</td><td>Billed monthly</td></tr>
-<tr><td>Annual</td><td>$19.99</td><td>Billed annually (save ~67%)</td></tr>
-<tr><td>Lifetime Access</td><td>$79.99</td><td>One-time payment</td></tr>
-</table>
+      <h3>3.6 Refunds</h3>
+      <p>All purchases are processed by Apple and are subject to <a href="https://support.apple.com/en-us/118223" target="_blank" rel="noopener">Apple's refund policy</a>. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. We do not have the ability to issue refunds directly.</p>
+    </div>
 
-<p>Prices are in US dollars and are subject to change. Applicable taxes may apply depending on your jurisdiction.</p>
+       <p>The AI identification and valuation system is designed to provide helpful estimates based on visible condition and publicly available pricing data. However:</p>
+      <ul>
+        <li>AI-generated grades and values may be inaccurate, incomplete, or outdated</li>
+        <li>Photograph quality, lighting, angle, and image resolution significantly affect identification accuracy</li>
+        <li>Rare varieties, errors, and counterfeit items may not be correctly identified</li>
+        <li>Market values fluctuate and the App may not reflect the most current prices</li>
+        <li>The App cannot assess physical properties such as weight, diameter, or metal composition that professional graders use</li>
+      </ul>
+      <p>For accurate valuations, authentication, or grading for commercial purposes, always consult a professional numismatist or submit items to a professional grading service such as PCGS or NGC (coins) or PMG (banknotes).</p>
+      <p><strong>We are not liable for any financial loss, missed opportunity, or other damages arising from reliance on AI-generated valuations or identifications.</strong></p>
+    </div>
 
-<p class="title-bold">5.3 Billing and Renewal</p>
-<p>Subscriptions are billed through your Apple ID account via the App Store. Your subscription will automatically renew at the end of each billing period unless auto-renewal is turned off at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period. You can manage or cancel your subscription at any time through your Apple ID account settings.</p>
+    <!-- 5. ACCEPTABLE USE -->
+    <div class="section">
+      <h2><span class="num">5</span> Acceptable Use</h2>
+      <p>You agree to use the App only for lawful purposes and in accordance with these Terms. You must not:</p>
+      <ul>
+        <li>Use the App to facilitate fraud, counterfeiting, or any illegal activity</li>
+        <li>Attempt to reverse-engineer, decompile, or disassemble any part of the App</li>
+        <li>Use automated tools, bots, or scripts to access the App or its AI services</li>
+        <li>Attempt to circumvent subscription requirements or access premium features without payment</li>
+        <li>Upload images that contain illegal, harmful, or offensive content</li>
+        <li>Misrepresent AI-generated valuations as professional appraisals to third parties</li>
+        <li>Interfere with or disrupt the App's servers or infrastructure</li>
+      </ul>
+    </div>
 
-<p class="title-bold">5.4 Refunds</p>
-<p>All purchases are processed by Apple and are subject to Apple's refund policy. CoinAIfy does not directly issue refunds for in-app purchases. To request a refund, please visit reportaproblem.apple.com.</p>
+    <!-- 6. INTELLECTUAL PROPERTY -->
+    <div class="section">
+      <h2><span class="num">6</span> Intellectual Property</h2>
+      <p>The App, including its design, code, AI models, text, graphics, logos, and all other content, is owned by CoinAIfy and is protected by applicable intellectual property laws. These Terms do not grant you any ownership rights in the App.</p>
+      <p>You are granted a limited, non-exclusive, non-transferable, revocable licence to use the App on Apple-branded devices you own or control, solely for your personal, non-commercial use, subject to these Terms and the Apple App Store Terms of Service.</p>
+      <p>You retain ownership of any photographs you take using the App. By submitting images for AI processing, you grant us a temporary, limited licence to process those images solely for the purpose of providing identification results. We do not claim ownership of your images and do not retain them after processing.</p>
+    </div>
 
-<p class="section-header"><strong>6. AI-Generated Valuations — Disclaimer</strong></p>
-<p>The coin and banknote identifications, grades, and market value estimates provided by the App are generated by artificial intelligence and are estimates only. They do not constitute professional numismatic appraisals, financial advice, or guarantees of value.</p>
+    <!-- 7. PRIVACY -->
+    <div class="section">
+      <h2><span class="num">7</span> Privacy</h2>
+      <p>Your use of the App is also governed by our <a href="https://coinaify.github.io/privacy">Privacy Policy</a>, which is incorporated into these Terms by reference. By using the App, you consent to the data practices described in the Privacy Policy.</p>
+      <p>In summary: scan images are processed in memory and never stored; your collection data is saved locally on your device only; location data is used only for the dealer finder and is not retained. See the full Privacy Policy for details.</p>
+    </div>
 
-<p class="section-header"><strong>7. Acceptable Use</strong></p>
-<ul>
-<li>Use the App to facilitate fraud, misrepresentation, or the sale of counterfeit currency or coins.</li>
-<li>Attempt to reverse-engineer, decompile, or disassemble any portion of the App.</li>
-<li>Use automated tools, bots, or scripts to access or interact with the App.</li>
-<li>Circumvent, disable, or interfere with security-related features of the App.</li>
-<li>Upload or transmit images that contain illegal content or that violate the rights of any third party.</li>
-<li>Use the App in any manner that could damage, disable, or impair the App or its servers.</li>
-</ul>
+    <!-- 8. THIRD-PARTY SERVICES -->
+    <div class="section">
+      <h2><span class="num">8</span> Third-Party Services</h2>
+      <p>The App integrates with the following third-party services, each governed by their own terms and privacy policies:</p>
+      <ul>
+        <li><strong>Apple App Store / StoreKit:</strong> Payment processing and subscription management — <a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank" rel="noopener">Apple Media Services Terms</a></li>
+        <li><strong>RevenueCat:</strong> Subscription status management — <a href="https://www.revenuecat.com/terms" target="_blank" rel="noopener">RevenueCat Terms</a></li>
+        <li><strong>Apple Maps Server API:</strong> Dealer finder feature — <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></li>
+        <li><strong>AI Vision Model:</strong> Coin and banknote identification — processed via Manus Forge infrastructure</li>
+      </ul>
+      <p>We are not responsible for the availability, accuracy, or practices of any third-party service.</p>
+    </div>
 
-<p class="section-header"><strong>8. Intellectual Property</strong></p>
-<p>All content within the App is the exclusive property of CoinAIfy or its licensors.</p>
+    <!-- 9. DISCLAIMERS -->
+    <div class="section">
+      <h2><span class="num">9</span> Disclaimers</h2>
+      <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, OR NON-INFRINGEMENT.</p>
+      <p>We do not warrant that:</p>
+      <ul>
+        <li>The App will be uninterrupted, error-free, or free of viruses or other harmful components</li>
+        <li>AI identification results will be accurate, complete, or current</li>
+        <li>Market valuations will reflect actual transaction prices</li>
+        <li>The App will be available in all geographic regions</li>
+      </ul>
+      <p>Some jurisdictions do not allow the exclusion of implied warranties. In such jurisdictions, the above exclusions apply to the maximum extent permitted by law.</p>
+    </div>
 
-<p class="section-header"><strong>9. Privacy</strong></p>
-<p>Your use of the App is also governed by our Privacy Policy.</p>
+    <!-- 10. LIMITATION OF LIABILITY -->
+    <div class="section">
+      <h2><span class="num">10</span> Limitation of Liability</h2>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, LOSS OF DATA, LOSS OF GOODWILL, OR ANY OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE APP.</p>
+      <p>IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS EXCEED THE AMOUNT YOU PAID TO US IN THE TWELVE MONTHS PRECEDING THE CLAIM, OR $10 USD IF YOU HAVE NOT MADE ANY PAYMENTS.</p>
+      <p>These limitations apply regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.</p>
+    </div>
 
-<p class="section-header"><strong>10. Third-Party Services</strong></p>
-<p>The App may integrate with or link to third-party services.</p>
+    <!-- 11. INDEMNIFICATION -->
+    <div class="section">
+      <h2><span class="num">11</span> Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless CoinAIfy and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising out of or in connection with:</p>
+      <ul>
+        <li>Your use of the App in violation of these Terms</li>
+        <li>Your violation of any applicable law or regulation</li>
+        <li>Your infringement of any third-party rights</li>
+        <li>Any misrepresentation of AI-generated valuations to third parties</li>
+      </ul>
+    </div>
 
-<p class="section-header"><strong>11. Limitation of Liability</strong></p>
-<p>To the fullest extent permitted by law, CoinAIfy shall not be liable for damages.</p>
+    <!-- 12. TERMINATION -->
+    <div class="section">
+      <h2><span class="num">12</span> Termination</h2>
+      <p>We reserve the right to suspend or terminate your access to the App at any time, with or without notice, if we reasonably believe you have violated these Terms or applicable law.</p>
+      <p>You may stop using the App at any time. To cancel your subscription, follow the cancellation instructions in Section 3.4. Uninstalling the App does not automatically cancel an active subscription.</p>
+      <p>Upon termination, your right to use the App ceases immediately. Sections 4, 6, 9, 10, 11, and 14 of these Terms survive termination.</p>
+    </div>
 
-<p class="section-header"><strong>12. Disclaimer of Warranties</strong></p>
-<p>The App is provided "as is" without warranties of any kind.</p>
+    <!-- 13. CHANGES TO TERMS -->
+    <div class="section">
+      <h2><span class="num">13</span> Changes to These Terms</h2>
+      <p>We may update these Terms from time to time. When we do, we will update the "Last Updated" date at the top of this page. For material changes, we will provide notice within the App or via the email address associated with your Apple ID (if available).</p>
+      <p>Your continued use of the App after changes are posted constitutes your acceptance of the updated Terms. If you do not agree to the updated Terms, you must stop using the App and cancel any active subscription.</p>
+    </div>
 
-<p class="section-header"><strong>13. Indemnification</strong></p>
-<p>You agree to indemnify and hold harmless CoinAIfy.</p>
+    <!-- 14. GOVERNING LAW -->
+    <div class="section">
+      <h2><span class="num">14</span> Governing Law and Disputes</h2>
+      <p>These Terms are governed by and construed in accordance with the laws of the United States, without regard to conflict of law principles. Any dispute arising from these Terms or your use of the App shall be resolved through binding arbitration in accordance with the American Arbitration Association's Consumer Arbitration Rules, except that either party may seek injunctive or other equitable relief in any court of competent jurisdiction.</p>
+      <p>You waive any right to participate in a class action lawsuit or class-wide arbitration. If this waiver is found unenforceable, the class action or class arbitration shall be severed from these Terms and resolved separately.</p>
+    </div>
 
-<p class="section-header"><strong>14. Termination</strong></p>
-<p>We reserve the right to terminate access at any time.</p>
+    <!-- 15. CONTACT -->
+    <div class="section">
+      <h2><span class="num">15</span> Contact Us</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:coinaify@gmail.com">coinaify@gmail.com</a></li>
+        <li><strong>Support:</strong> <a href="https://coinaify.com/support">coinaify.com/support</a></li>
+      </ul>
+    </div>
 
-<p class="section-header"><strong>15. Changes to the App</strong></p>
-<p>We may modify or discontinue the App at any time.</p>
+  </div>
 
-<p class="section-header"><strong>16. Governing Law and Dispute Resolution</strong></p>
-<p>These Terms are governed by the laws of California.</p>
-
-<p class="section-header"><strong>17. Apple-Specific Terms</strong></p>
-<p>Additional terms apply for Apple App Store usage.</p>
-
-<p class="section-header"><strong>18. Contact Us</strong></p>
-<p>CoinAIfy Support Email: coinaify@gmail.com</p>
-<p>Website: https://coinaify.com</p>
-
-<p><strong>These Terms of Use were last updated on April 15, 2026.</strong></p>
-
-</div>
-
-<!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Coin<span>AIfy</span></div>
     <div class="footer-links">
       <a href="https://coinaify.com">Home</a>
       <a href="https://coinaify.com/support">Support</a>
-      <a href="https://coinaify.com/privacy">Privacy Policy</a>  
-      <a href="https://coinaify.com/subscribe">Pricing Details</a>
+      <a href="https://coinaify.com/privacy">Privacy</a>    
+      <a href="https://coinaify.com/subscribe">CoinAIfy Pro</a>
       <a href="mailto:coinaify@gmail.com">Contact</a>
     </div>
-    <p class="footer-copy">&copy; 2026 CoinAIfy. All rights reserved. Apple and the Apple logo are trademarks of Apple Inc.</p>
+    <p>&copy; 2026 CoinAIfy. All rights reserved.</p>
   </footer>
 
 </body>
