@@ -510,63 +510,28 @@
     </div>
   </section>
 
-<!-- BANKNOTES -->
-<section id="banknotes" class="full-width">
-  <div class="inner">
-    <h2 class="section-title">Banknote Intelligence</h2>
-    <p class="section-sub">The only app that treats banknotes as seriously as coins — a dedicated intelligence layer for paper money.</p>
-    <div class="bnote-grid">
-      <div class="bnote-card">
-        <div class="bnote-num">01</div>
-        <h3>PMG &amp; PCGS Grade Badge</h3>
-        <p>Detects certified grades from scan results and displays a styled registry badge — gold for PMG, silver-blue for PCGS — with numeric grade and suffix (EPQ, PPQ).</p>
-        <div class="bnote-tags">
-          <span class="bnote-tag">PMG</span>
-          <span class="bnote-tag">PCGS</span>
-        </div>
-      </div>
-      <div class="bnote-card">
-        <div class="bnote-num">02</div>
-        <h3>Face Value vs. Market Value</h3>
-        <p>Shows face value and collector market value side-by-side with a premium multiplier so collectors immediately see the value above face.</p>
-        <div class="bnote-tags">
-          <span class="bnote-tag">e.g. 2.5× face value</span>
-        </div>
-      </div>
-      <div class="bnote-card">
-        <div class="bnote-num">03</div>
-        <h3>Serial Number Type Detection</h3>
-        <p>Identifies and classifies serial number type — Star Notes, Low Serials, Fancy/Radar serials — which directly affect collector value.</p>
-        <div class="bnote-tags">
-          <span class="bnote-tag">Star Note</span>
-          <span class="bnote-tag">Low Serial</span>
-          <span class="bnote-tag">Fancy/Radar</span>
-        </div>
-      </div>
-      <div class="bnote-card">
-        <div class="bnote-num">04</div>
-        <h3>Banknote Condition Labels</h3>
-        <p>Value-by-condition breakdown uses banknote-specific terms instead of coin grades for accurate collector context.</p>
-        <div class="bnote-tags">
-          <span class="bnote-tag">Circulated</span>
-          <span class="bnote-tag">Fine</span>
-          <span class="bnote-tag">Very Fine</span>
-          <span class="bnote-tag">Uncirculated</span>
-          <span class="bnote-tag">Gem UNC</span>
-        </div>
-      </div>
-      <div class="bnote-card">
-        <div class="bnote-num">05</div>
-        <h3>Separate Collection Tracking</h3>
-        <p>Banknote totals are tracked independently from coins — portfolio value is never mixed or mislabelled.</p>
-        <div class="bnote-tags">
-          <span class="bnote-tag">Coins</span>
-          <span class="bnote-tag">Banknotes</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+ /* ── BANKNOTES ── */
+    #banknotes { background: var(--navy); max-width: 100%; padding: 80px 40px; }
+    #banknotes .inner { max-width: 1100px; margin: 0 auto; }
+    #banknotes h2.section-title { color: var(--white); }
+    #banknotes p.section-sub { color: rgba(255,255,255,0.6); text-align: center; font-size: 17px; max-width: 600px; margin: 0 auto 48px; }
+    .bnote-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .bnote-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px; padding: 28px;
+    }
+    .bnote-num { font-size: 11px; font-weight: 700; color: var(--gold-light); letter-spacing: 1px; margin-bottom: 10px; }
+    .bnote-card h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .bnote-card p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 14px; }
+    .bnote-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .bnote-tag {
+      background: rgba(184,134,11,0.2); border: 1px solid rgba(184,134,11,0.4);
+      border-radius: 20px; padding: 4px 12px;
+      font-size: 12px; color: var(--gold-light); font-weight: 600;
+    }
 
   <!-- PRICING -->
   <section class="pricing" id="pricing">
@@ -623,6 +588,3 @@
 
 </body>
 </html>
-
-
-
