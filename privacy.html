@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <title>Privacy Policy — CoinAIfy</title>
   <meta name="description" content="CoinAIfy Privacy Policy — how we handle your data when you use the CoinAIfy coin and banknote identification app." />
   <style>
@@ -352,15 +349,15 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="https://coinaify.com/">Coin<span>AIfy</span></a>
-    <a class="nav-back" href="https://coinaify.com/">← Back to Home</a>
+    <a class="nav-logo" href="https://coinaify.github.io/">Coin<span>AIfy</span></a>
+    <a class="nav-back" href="https://coinaify.github.io/">← Back to Home</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <h1>Privacy Policy</h1>
-    <p>We built CoinAIfy with privacy in mind.</p>
-    <div class="effective">Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Updated: April 2026</div>
+    <p>We built CoinAIfy with privacy in mind. Here is exactly what data we collect, why, and where it goes.</p>
+    <div class="effective">Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Updated: May 2026</div>
   </section>
 
   <!-- CONTENT -->
@@ -392,6 +389,20 @@
           </div>
         </div>
         <div class="summary-item">
+          <div class="icon">🤝</div>
+          <div>
+            <div class="label">Consent Before AI Scan</div>
+            <div class="desc">You are asked for permission before any photo is sent to Google Gemini AI. Revocable anytime in Settings.</div>
+          </div>
+        </div>
+        <div class="summary-item">
+          <div class="icon">🗑️</div>
+          <div>
+            <div class="label">Delete All My Data</div>
+            <div class="desc">One tap in Settings → Data &amp; Privacy permanently removes your entire collection and all app data.</div>
+          </div>
+        </div>
+        <div class="summary-item">
           <div class="icon">🔒</div>
           <div>
             <div class="label">No Account Required</div>
@@ -412,11 +423,60 @@
     <div class="section">
       <h2><span class="num">2</span> Data We Collect and How It Is Used</h2>
 
-      <h3>2.1 Coin and Banknote Images</h3>
-      <p>When you scan a coin or banknote, the image is compressed on your device and transmitted to our server solely for AI identification. The image is passed to an AI vision model, which returns identification results (name, grade, estimated value, etc.). <strong>Images are never written to a database, file system, or any persistent storage.</strong> They exist only in server memory for the duration of the request — typically a few seconds — and are discarded immediately after the AI responds.</p>
+      <h3>2.1 Coin and Banknote Images — AI Processing Disclosure</h3>
+
+      <p>When you tap <strong>Coins</strong>, <strong>Banknotes</strong>, or the <strong>Gallery</strong> button to start a scan, the photo you capture or select is compressed on your device and sent securely (HTTPS) to a third-party AI service for identification.</p>
+
+      <p><strong>Before your very first scan, CoinAIfy displays a consent sheet that clearly explains:</strong></p>
+      <ul>
+        <li>What data will be sent (your coin or banknote photo only)</li>
+        <li>Who will receive it (Google Gemini AI, operated by Google LLC)</li>
+        <li>How it will be used (identification, grading, and valuation only)</li>
+        <li>That images are discarded immediately after the AI response is returned</li>
+      </ul>
+      <p>You must tap <strong>"I Agree &amp; Continue"</strong> before any image is transmitted. If you decline, AI identification is unavailable until you grant permission. You may revoke this permission at any time in <strong>Settings → Data &amp; Privacy → Revoke AI Permission</strong>.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Disclosure Point</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>What data is sent</strong></td>
+            <td>The compressed JPEG image of the coin or banknote you photograph or select from your gallery. No name, email, location, contacts, device identifiers, or any other personal data is included in the AI request.</td>
+          </tr>
+          <tr>
+            <td><strong>Who receives it</strong></td>
+            <td><strong>Google LLC</strong> — via the Google Gemini API (Gemini 2.0 Flash model), routed through the Manus Forge API gateway. Google LLC is headquartered at 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</td>
+          </tr>
+          <tr>
+            <td><strong>Purpose</strong></td>
+            <td>AI-powered numismatic identification: coin/banknote name, country, year, denomination, estimated grade (Sheldon scale), and current market value range.</td>
+          </tr>
+          <tr>
+            <td><strong>Retention by Google</strong></td>
+            <td>Google does not retain images submitted via the Gemini API after the response is returned. Images exist only in server memory for the duration of the request (typically 2–5 seconds) and are discarded immediately afterwards.</td>
+          </tr>
+          <tr>
+            <td><strong>Retention by CoinAIfy</strong></td>
+            <td>CoinAIfy does not store scan images on its servers. Only the AI result (coin name, grade, value text) is returned to your device and saved locally.</td>
+          </tr>
+          <tr>
+            <td><strong>User consent</strong></td>
+            <td>Explicit in-app consent is obtained before the first scan. Consent is stored locally on your device. You may revoke it at any time in Settings → Data &amp; Privacy.</td>
+          </tr>
+          <tr>
+            <td><strong>Google's privacy policy</strong></td>
+            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+          </tr>
+        </tbody>
+      </table>
 
       <div class="highlight">
-        <strong>In plain terms:</strong> We cannot retrieve, review, or share your scan images. They are gone the moment the AI finishes processing them.
+        <strong>In plain terms:</strong> Your photo goes to Google Gemini AI for identification, then it is gone. Neither CoinAIfy nor Google retains your scan images. The identification result (coin name, grade, value) is saved only on your device. You are always asked for permission first, and you can revoke it at any time.
       </div>
 
       <h3>2.2 Scan Results and Collection Data</h3>
@@ -445,7 +505,7 @@
       <h2><span class="num">3</span> Third-Party Services</h2>
       <p>CoinAIfy uses the following third-party services. Each has its own privacy policy:</p>
       <ul>
-        <li><strong>AI Vision Model:</strong> Receives your scan images for identification. Images are not retained by the AI provider after processing.</li>
+        <li><strong>Google Gemini AI (Gemini 2.0 Flash via Manus Forge API):</strong> Receives the coin or banknote photo(s) you capture for AI-powered identification, grading, and valuation. <em>Data sent:</em> compressed image only. <em>Purpose:</em> numismatic identification and market value estimation. <em>Retention:</em> Google does not retain images after the API response is returned. <em>User consent:</em> the app obtains your explicit permission before the first scan. Google LLC's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
         <li><strong>RevenueCat:</strong> Manages subscription status and in-app purchases. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.</li>
         <li><strong>Apple App Store / StoreKit:</strong> Processes all payments. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.</li>
         <li><strong>Apple Maps Server API:</strong> Used for the dealer finder feature. Receives GPS coordinates only during a search query. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.</li>
@@ -464,7 +524,7 @@
     <!-- 6. CHILDREN -->
     <div class="section">
       <h2><span class="num">5</span> Children's Privacy</h2>
-      <p>CoinAIfy is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. Because CoinAIfy does not collect personal information from any user, there is no special risk to children's privacy.</a>.</p>
+      <p>CoinAIfy is not directed at children under the age of 13. CoinAIfy does not collect personal information from any user, there is no special risk to children's privacy.
     </div>
 
     <!-- 7. YOUR RIGHTS -->
@@ -472,8 +532,9 @@
       <h2><span class="num">6</span> Your Rights</h2>
       <p>Because CoinAIfy does not collect personal information tied to your identity, most traditional data subject rights (access, correction, deletion) apply only to the data stored locally on your device, which you control directly.</p>
       <ul>
-        <li><strong>Access your collection data:</strong> It is stored on your device and visible within the app at all times.</li>
-        <li><strong>Delete your collection data:</strong> Delete the app or clear its data in iOS Settings → CoinAIfy → Reset.</li>
+        <li><strong>Access your collection data:</strong> It is stored on your device and visible within the app at all times in the Collection tab.</li>
+        <li><strong>Delete all your data:</strong> Go to <strong>Settings → Data &amp; Privacy → Delete All My Data</strong> inside the app. This permanently removes your entire coin and banknote collection, AI consent record, and all app data from your device in one tap. Alternatively, delete the app or clear its data in iOS Settings → CoinAIfy.</li>
+        <li><strong>Revoke AI data permission:</strong> Go to <strong>Settings → Data &amp; Privacy → Revoke AI Permission</strong>. The app will ask for your consent again before the next scan. Your existing collection data is not affected.</li>
         <li><strong>Manage subscription data:</strong> Contact RevenueCat or manage through iPhone Settings → Apple ID → Subscriptions.</li>
         <li><strong>Opt out of SKAN attribution:</strong> You can limit ad tracking in iOS Settings → Privacy &amp; Security → Tracking.</li>
       </ul>
@@ -496,7 +557,7 @@
     <!-- 10. CONTACT -->
     <div class="section">
       <h2><span class="num">9</span> Contact Us</h2>
-      <p>If you have questions regarding this Privacy Policy or our data practices, please contact us:</p>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:coinaify@gmail.com">coinaify@gmail.com</a></li>
         <li><strong>Support:</strong> <a href="https://coinaify.com/support">coinaify.com/support</a></li>
@@ -508,7 +569,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
-      <a href="https://coinaify.com">Home</a>
+           <a href="https://coinaify.com">Home</a>
       <a href="https://coinaify.com/subscribe">CoinAIfy Pro</a>
       <a href="https://coinaify.com/terms">Terms of Service</a>
       <a href="https://coinaify.com/support">Support</a>
