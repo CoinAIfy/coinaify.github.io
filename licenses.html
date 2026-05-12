@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoinAIfy — Open-Source Licenses</title>
+  <meta name="description" content="CoinAIfy Open-Source Licenses — third-party libraries and their licence types used in the CoinAIfy coin and banknote identification app." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b8860b;
+      --gold-light: #d4a017;
+      --dark: #1d1d1f;
+      --mid: #3a3a3c;
+      --muted: #6e6e73;
+      --bg: #f5f5f7;
+      --white: #ffffff;
+      --border: #e5e5ea;
+      --navy: #0a0f1e;
+      --surface: #f9f9fb;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--gold); text-decoration: none; }
+    .nav-logo span { color: var(--dark); }
+
+    .nav-back {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(184,134,11,0.18);
+      border: 1px solid rgba(184,134,11,0.4);
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ── MAIN ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── INTRO ── */
+    .intro-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+
+    .intro-card p + p { margin-top: 12px; }
+
+    /* ── SECTION HEADING ── */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      margin-top: 40px;
+    }
+
+    .section-heading:first-of-type { margin-top: 0; }
+
+    .licence-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .badge-mit   { background: #e6f4ea; color: #1a7f37; border: 1px solid #b7dfbe; }
+    .badge-apache { background: #fff3e0; color: #c45c00; border: 1px solid #ffd0a0; }
+    .badge-bsd   { background: #e8f0fe; color: #1a56db; border: 1px solid #b3c9f9; }
+    .badge-isc   { background: #f3e8ff; color: #7c3aed; border: 1px solid #d8b4fe; }
+    .badge-cc0   { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
+    .badge-other { background: #f5f5f7; color: var(--muted); border: 1px solid var(--border); }
+
+    .section-heading h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    /* ── TABLE ── */
+    .lib-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .lib-table thead {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lib-table th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .lib-table td {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .lib-table tr:first-child td { border-top: none; }
+
+    .lib-table tr:hover td { background: #fafafa; }
+
+    .lib-name {
+      font-weight: 600;
+      color: var(--dark);
+      font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+      font-size: 13px;
+    }
+
+    .lib-desc {
+      color: var(--mid);
+      font-size: 13.5px;
+    }
+
+    .lib-repo {
+      font-size: 12px;
+      color: var(--gold);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .lib-repo:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 16px; }
+      .container { padding: 32px 16px 60px; }
+      .intro-card { padding: 20px; }
+      .lib-table th:last-child, .lib-table td:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://coinaify.github.io" class="nav-logo">Coin<span>AIfy</span></a>
+  <a href="https://coinaify.github.io" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Legal</div>
+  <h1>Open-Source Licenses</h1>
+  <p>CoinAIfy is built on the shoulders of the open-source community. Below is a full list of third-party libraries used in the app and their respective licences.</p>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- Intro -->
+  <div class="intro-card">
+    <p>CoinAIfy uses a number of open-source packages. We are grateful to every maintainer and contributor whose work makes this app possible. All packages are used in accordance with their respective licence terms.</p>
+    <p>This page was last updated <strong>May 2026</strong> and reflects the dependencies in CoinAIfy version 1.0 and later.</p>
+  </div>
+
+  <!-- ── MIT ── -->
+  <div class="section-heading">
+    <span class="licence-badge badge-mit">MIT</span>
+    <h2>MIT License</h2>
+  </div>
+  <table class="lib-table">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Description</th>
+        <th>Repository</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="lib-name">react</span></td>
+        <td><span class="lib-desc">A JavaScript library for building user interfaces.</span></td>
+        <td><a class="lib-repo" href="https://github.com/facebook/react" target="_blank" rel="noopener">github.com/facebook/react</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native</span></td>
+        <td><span class="lib-desc">Framework for building native apps using React.</span></td>
+        <td><a class="lib-repo" href="https://github.com/facebook/react-native" target="_blank" rel="noopener">github.com/facebook/react-native</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-dom</span></td>
+        <td><span class="lib-desc">React package for working with the DOM (web target).</span></td>
+        <td><a class="lib-repo" href="https://github.com/facebook/react" target="_blank" rel="noopener">github.com/facebook/react</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-web</span></td>
+        <td><span class="lib-desc">React Native components and APIs for the web.</span></td>
+        <td><a class="lib-repo" href="https://github.com/necolas/react-native-web" target="_blank" rel="noopener">github.com/necolas/react-native-web</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo</span></td>
+        <td><span class="lib-desc">Open-source platform for making universal native apps with React.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-router</span></td>
+        <td><span class="lib-desc">File-based routing for React Native and web apps built with Expo.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-audio</span></td>
+        <td><span class="lib-desc">Audio recording and playback for Expo apps.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-camera</span></td>
+        <td><span class="lib-desc">Camera component and barcode scanner for Expo apps.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-constants</span></td>
+        <td><span class="lib-desc">Provides system information that remains constant throughout the lifetime of an app.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-file-system</span></td>
+        <td><span class="lib-desc">Provides access to the file system on the device.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-font</span></td>
+        <td><span class="lib-desc">Allows loading fonts from the web and using them in React Native components.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-haptics</span></td>
+        <td><span class="lib-desc">Provides haptic feedback on iOS and Android.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-image</span></td>
+        <td><span class="lib-desc">High-performance image component with caching and transitions.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-image-manipulator</span></td>
+        <td><span class="lib-desc">Resize, crop, rotate, and compress images.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-image-picker</span></td>
+        <td><span class="lib-desc">Provides access to the system's UI for selecting images and videos.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-keep-awake</span></td>
+        <td><span class="lib-desc">Prevents the device screen from sleeping.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-linking</span></td>
+        <td><span class="lib-desc">Provides utilities for deep linking and URL handling.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-location</span></td>
+        <td><span class="lib-desc">Allows reading geolocation information from the device.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-mail-composer</span></td>
+        <td><span class="lib-desc">Provides an interface to compose and send email messages.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-media-library</span></td>
+        <td><span class="lib-desc">Provides access to the device's media library.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-notifications</span></td>
+        <td><span class="lib-desc">Provides an API to fetch push notification tokens and present, schedule, receive and respond to notifications.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-secure-store</span></td>
+        <td><span class="lib-desc">Provides a way to encrypt and securely store key–value pairs locally on the device.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-sharing</span></td>
+        <td><span class="lib-desc">Allows sharing files directly with other compatible applications.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-splash-screen</span></td>
+        <td><span class="lib-desc">Prevents the splash screen from hiding until the app is ready.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-status-bar</span></td>
+        <td><span class="lib-desc">Provides the same interface as the React Native StatusBar API.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-store-review</span></td>
+        <td><span class="lib-desc">Allows you to ask the user to rate your app in the App Store.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-symbols</span></td>
+        <td><span class="lib-desc">Provides access to SF Symbols on iOS.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-system-ui</span></td>
+        <td><span class="lib-desc">Allows customisation of the app's root view background color.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-video</span></td>
+        <td><span class="lib-desc">Provides a Video component for playing videos in Expo apps.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-web-browser</span></td>
+        <td><span class="lib-desc">Provides access to the system's web browser.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">@expo/vector-icons</span></td>
+        <td><span class="lib-desc">Built-in icon sets for Expo apps including MaterialIcons and Ionicons.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/vector-icons" target="_blank" rel="noopener">github.com/expo/vector-icons</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">@react-native-async-storage/async-storage</span></td>
+        <td><span class="lib-desc">Asynchronous, persistent, key-value storage system for React Native.</span></td>
+        <td><a class="lib-repo" href="https://github.com/react-native-async-storage/async-storage" target="_blank" rel="noopener">github.com/react-native-async-storage/async-storage</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">@react-navigation/native</span></td>
+        <td><span class="lib-desc">React Navigation core library for routing and navigation in React Native apps.</span></td>
+        <td><a class="lib-repo" href="https://github.com/react-navigation/react-navigation" target="_blank" rel="noopener">github.com/react-navigation/react-navigation</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">@react-navigation/bottom-tabs</span></td>
+        <td><span class="lib-desc">Tab bar navigator for React Navigation.</span></td>
+        <td><a class="lib-repo" href="https://github.com/react-navigation/react-navigation" target="_blank" rel="noopener">github.com/react-navigation/react-navigation</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-reanimated</span></td>
+        <td><span class="lib-desc">React Native's Animated library reimplemented for smooth 60/120fps animations.</span></td>
+        <td><a class="lib-repo" href="https://github.com/software-mansion/react-native-reanimated" target="_blank" rel="noopener">github.com/software-mansion/react-native-reanimated</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-gesture-handler</span></td>
+        <td><span class="lib-desc">Declarative API exposing platform native touch and gesture system to React Native.</span></td>
+        <td><a class="lib-repo" href="https://github.com/software-mansion/react-native-gesture-handler" target="_blank" rel="noopener">github.com/software-mansion/react-native-gesture-handler</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-safe-area-context</span></td>
+        <td><span class="lib-desc">A flexible way to handle safe area insets in JS for React Native apps.</span></td>
+        <td><a class="lib-repo" href="https://github.com/th3rdwave/react-native-safe-area-context" target="_blank" rel="noopener">github.com/th3rdwave/react-native-safe-area-context</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-screens</span></td>
+        <td><span class="lib-desc">Native primitives to represent screens instead of plain React Native Views.</span></td>
+        <td><a class="lib-repo" href="https://github.com/software-mansion/react-native-screens" target="_blank" rel="noopener">github.com/software-mansion/react-native-screens</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-svg</span></td>
+        <td><span class="lib-desc">SVG library for React Native and React Native Web.</span></td>
+        <td><a class="lib-repo" href="https://github.com/software-mansion/react-native-svg" target="_blank" rel="noopener">github.com/software-mansion/react-native-svg</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-maps</span></td>
+        <td><span class="lib-desc">React Native Map components for iOS + Android.</span></td>
+        <td><a class="lib-repo" href="https://github.com/react-native-maps/react-native-maps" target="_blank" rel="noopener">github.com/react-native-maps/react-native-maps</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-view-shot</span></td>
+        <td><span class="lib-desc">Capture a React Native view to an image.</span></td>
+        <td><a class="lib-repo" href="https://github.com/gre/react-native-view-shot" target="_blank" rel="noopener">github.com/gre/react-native-view-shot</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">nativewind</span></td>
+        <td><span class="lib-desc">Use Tailwind CSS in React Native — NativeWind v4.</span></td>
+        <td><a class="lib-repo" href="https://github.com/marklawlor/nativewind" target="_blank" rel="noopener">github.com/marklawlor/nativewind</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">tailwindcss</span></td>
+        <td><span class="lib-desc">A utility-first CSS framework for rapid UI development.</span></td>
+        <td><a class="lib-repo" href="https://github.com/tailwindlabs/tailwindcss" target="_blank" rel="noopener">github.com/tailwindlabs/tailwindcss</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">tailwind-merge</span></td>
+        <td><span class="lib-desc">Merge Tailwind CSS classes without style conflicts.</span></td>
+        <td><a class="lib-repo" href="https://github.com/dcastil/tailwind-merge" target="_blank" rel="noopener">github.com/dcastil/tailwind-merge</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">clsx</span></td>
+        <td><span class="lib-desc">A tiny utility for constructing className strings conditionally.</span></td>
+        <td><a class="lib-repo" href="https://github.com/lukeed/clsx" target="_blank" rel="noopener">github.com/lukeed/clsx</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">@tanstack/react-query</span></td>
+        <td><span class="lib-desc">Powerful asynchronous state management for React (TanStack Query v5).</span></td>
+        <td><a class="lib-repo" href="https://github.com/TanStack/query" target="_blank" rel="noopener">github.com/TanStack/query</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">@trpc/client · @trpc/react-query · @trpc/server</span></td>
+        <td><span class="lib-desc">End-to-end typesafe APIs for TypeScript — tRPC v11.</span></td>
+        <td><a class="lib-repo" href="https://github.com/trpc/trpc" target="_blank" rel="noopener">github.com/trpc/trpc</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">axios</span></td>
+        <td><span class="lib-desc">Promise-based HTTP client for the browser and Node.js.</span></td>
+        <td><a class="lib-repo" href="https://github.com/axios/axios" target="_blank" rel="noopener">github.com/axios/axios</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">zod</span></td>
+        <td><span class="lib-desc">TypeScript-first schema declaration and validation library.</span></td>
+        <td><a class="lib-repo" href="https://github.com/colinhacks/zod" target="_blank" rel="noopener">github.com/colinhacks/zod</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">superjson</span></td>
+        <td><span class="lib-desc">Safely serialize JavaScript expressions to a superset of JSON.</span></td>
+        <td><a class="lib-repo" href="https://github.com/blitz-js/superjson" target="_blank" rel="noopener">github.com/blitz-js/superjson</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">dotenv</span></td>
+        <td><span class="lib-desc">Loads environment variables from a .env file into process.env.</span></td>
+        <td><a class="lib-repo" href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener">github.com/motdotla/dotenv</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">express</span></td>
+        <td><span class="lib-desc">Fast, unopinionated, minimalist web framework for Node.js.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expressjs/express" target="_blank" rel="noopener">github.com/expressjs/express</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">drizzle-orm</span></td>
+        <td><span class="lib-desc">TypeScript ORM for SQL databases with a focus on type safety.</span></td>
+        <td><a class="lib-repo" href="https://github.com/drizzle-team/drizzle-orm" target="_blank" rel="noopener">github.com/drizzle-team/drizzle-orm</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">jose</span></td>
+        <td><span class="lib-desc">JavaScript implementation of JSON Object Signing and Encryption (JWT, JWK, JWS).</span></td>
+        <td><a class="lib-repo" href="https://github.com/panva/jose" target="_blank" rel="noopener">github.com/panva/jose</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">cookie</span></td>
+        <td><span class="lib-desc">HTTP server cookie parsing and serialisation.</span></td>
+        <td><a class="lib-repo" href="https://github.com/jshttp/cookie" target="_blank" rel="noopener">github.com/jshttp/cookie</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">concurrently</span></td>
+        <td><span class="lib-desc">Run multiple commands concurrently.</span></td>
+        <td><a class="lib-repo" href="https://github.com/open-cli-tools/concurrently" target="_blank" rel="noopener">github.com/open-cli-tools/concurrently</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">cross-env</span></td>
+        <td><span class="lib-desc">Set and use environment variables across platforms.</span></td>
+        <td><a class="lib-repo" href="https://github.com/kentcdodds/cross-env" target="_blank" rel="noopener">github.com/kentcdodds/cross-env</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">esbuild</span></td>
+        <td><span class="lib-desc">An extremely fast JavaScript bundler and minifier.</span></td>
+        <td><a class="lib-repo" href="https://github.com/evanw/esbuild" target="_blank" rel="noopener">github.com/evanw/esbuild</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">tsx</span></td>
+        <td><span class="lib-desc">TypeScript execute — run TypeScript files directly with Node.js.</span></td>
+        <td><a class="lib-repo" href="https://github.com/privatenumber/tsx" target="_blank" rel="noopener">github.com/privatenumber/tsx</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">prettier</span></td>
+        <td><span class="lib-desc">An opinionated code formatter.</span></td>
+        <td><a class="lib-repo" href="https://github.com/prettier/prettier" target="_blank" rel="noopener">github.com/prettier/prettier</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">vitest</span></td>
+        <td><span class="lib-desc">A blazing fast unit test framework powered by Vite.</span></td>
+        <td><a class="lib-repo" href="https://github.com/vitest-dev/vitest" target="_blank" rel="noopener">github.com/vitest-dev/vitest</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── Apache 2.0 ── -->
+  <div class="section-heading">
+    <span class="licence-badge badge-apache">Apache 2.0</span>
+    <h2>Apache License 2.0</h2>
+  </div>
+  <table class="lib-table">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Description</th>
+        <th>Repository</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="lib-name">react-native-purchases</span></td>
+        <td><span class="lib-desc">RevenueCat SDK for in-app purchases and subscriptions on iOS and Android.</span></td>
+        <td><a class="lib-repo" href="https://github.com/RevenueCat/react-native-purchases" target="_blank" rel="noopener">github.com/RevenueCat/react-native-purchases</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">react-native-purchases-ui</span></td>
+        <td><span class="lib-desc">RevenueCat Paywall UI components for React Native.</span></td>
+        <td><a class="lib-repo" href="https://github.com/RevenueCat/react-native-purchases" target="_blank" rel="noopener">github.com/RevenueCat/react-native-purchases</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">@sentry/react-native</span></td>
+        <td><span class="lib-desc">Official Sentry SDK for React Native — error monitoring and performance tracking.</span></td>
+        <td><a class="lib-repo" href="https://github.com/getsentry/sentry-react-native" target="_blank" rel="noopener">github.com/getsentry/sentry-react-native</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-build-properties</span></td>
+        <td><span class="lib-desc">Allows customising native build properties for Expo managed workflow.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">expo-device</span></td>
+        <td><span class="lib-desc">Provides device information such as device type and model.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">drizzle-kit</span></td>
+        <td><span class="lib-desc">CLI toolkit for Drizzle ORM — schema migrations and introspection.</span></td>
+        <td><a class="lib-repo" href="https://github.com/drizzle-team/drizzle-orm" target="_blank" rel="noopener">github.com/drizzle-team/drizzle-orm</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">typescript</span></td>
+        <td><span class="lib-desc">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.</span></td>
+        <td><a class="lib-repo" href="https://github.com/microsoft/TypeScript" target="_blank" rel="noopener">github.com/microsoft/TypeScript</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── BSD ── -->
+  <div class="section-heading">
+    <span class="licence-badge badge-bsd">BSD</span>
+    <h2>BSD License</h2>
+  </div>
+  <table class="lib-table">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Description</th>
+        <th>Repository</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="lib-name">eslint</span></td>
+        <td><span class="lib-desc">Find and fix problems in your JavaScript code.</span></td>
+        <td><a class="lib-repo" href="https://github.com/eslint/eslint" target="_blank" rel="noopener">github.com/eslint/eslint</a></td>
+      </tr>
+      <tr>
+        <td><span class="lib-name">eslint-config-expo</span></td>
+        <td><span class="lib-desc">ESLint configuration for Expo projects.</span></td>
+        <td><a class="lib-repo" href="https://github.com/expo/expo" target="_blank" rel="noopener">github.com/expo/expo</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── ISC ── -->
+  <div class="section-heading">
+    <span class="licence-badge badge-isc">ISC</span>
+    <h2>ISC License</h2>
+  </div>
+  <table class="lib-table">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Description</th>
+        <th>Repository</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="lib-name">mysql2</span></td>
+        <td><span class="lib-desc">MySQL client for Node.js with focus on performance.</span></td>
+        <td><a class="lib-repo" href="https://github.com/sidorares/node-mysql2" target="_blank" rel="noopener">github.com/sidorares/node-mysql2</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── Note ── -->
+  <div class="intro-card" style="margin-top:40px; border-left: 4px solid var(--gold);">
+    <p><strong>Note:</strong> This list covers the direct runtime and development dependencies declared in <code>package.json</code>. Each package may itself depend on additional transitive dependencies, all of which are used in accordance with their respective open-source licence terms. For a complete machine-readable list, see the project's <code>node_modules</code> directory or run <code>npx license-checker --json</code> from the project root.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 CoinAIfy. All rights reserved. &nbsp;·&nbsp;
+    <a href="https://coinaify.com/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="https://coinaify.com/terms">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+  </p>
+</footer>
+
+</body>
+</html>
