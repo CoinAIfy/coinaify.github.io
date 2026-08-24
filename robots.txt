@@ -1,7 +1,0 @@
-# robots.txt for CoinAIfy
-# https://coinaify.com/
-
-User-agent: *
-Allow: /
-
-Sitemap: https://coinaify.com/sitemap.xml
